@@ -1,11 +1,15 @@
 class Solution(object):
     def lengthOfLongestSubstring(self, s):
-        sub = ''
+        sub = []
         output = 0
-        for i in s:
-            if i in sub:
-                sub = sub[sub.index(i) + 1:]
-            sub += i
-            if len(sub) > output:
-                output = len(sub)
+        for x in s:
+            if x not in sub:
+               sub.append(x)
+            else:
+                sub = sub[sub.index(x)+1:] + [x]
+            if output < len(sub): 
+                    output = len(sub)
         return output
+                
+            
+                
