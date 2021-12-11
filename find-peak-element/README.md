@@ -1,3 +1,4 @@
+[Discussion Post (created on 11/11/2021 at 22:57)](https://leetcode.com/problems/find-peak-element/discuss/1623595/faster-than-90-using-O(N)-approach)  
 <h2>162. Find Peak Element</h2><h3>Medium</h3><hr><div><p>A peak element is an element that is strictly greater than its neighbors.</p>
 
 <p>Given an integer array <code>nums</code>, find a peak element, and return its index. If&nbsp;the array contains multiple peaks, return the index to <strong>any of the peaks</strong>.</p>
