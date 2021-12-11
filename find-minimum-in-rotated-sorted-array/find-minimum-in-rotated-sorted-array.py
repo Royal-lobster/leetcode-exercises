@@ -16,6 +16,6 @@ class Solution(object):
             else:
                 r = m-1 # move to left towards pivot
             
-            # THE m WILL CONVERGE TO SMALL SINCE WE ARE GOING THROUGH IT
+            # THE m WILL CONVERGE TO SOLUTION SINCE WE ARE GOING TOWARDS IT
             res = min(res, nums[m])  
         return res
