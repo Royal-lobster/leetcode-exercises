@@ -1,28 +1,21 @@
 class Solution(object):
     def findMin(self, nums):
-        l, r = 0, len(nums)-1
         
-        # IF THE ARRAY IS NOT ROTATED
-        if nums[l] <= nums[r]:
-            return nums[0]
+        # INITIALIZE l, r FOR POINTERS AND res TO STORE MINIMUM VALUE 
+        l,r,res = 0, len(nums)-1, nums[0]
         
-        # IF THE ARRAY IS ROTATED FIND THE PIVOT
+        # START BINARY SEARCH 
         while l <= r:
             m = l + (r-l)//2
-            print(nums[m])
             
-            # IF WE FOUND PIVOT
-            if nums[m] < nums[m-1]:
-                return nums[m]
-            if l == m:
-                return nums[m+1]
+            # IF m IS IN LEFT SIDE OF PIVOT
+            if nums[m] > nums[r]:
+                l = m+1 # move to right towards pivot
             
-            # IF m IS IN LEFT PORTION
-            if nums[l] < nums[m]:
-                l = m
-                
-            # IF m IS IN RIGHT PORTION
+            # IF m IS IN RIGHT SIDE OF PIVOT
             else:
-                r = m
+                r = m-1 # move to left towards pivot
             
-        
+            # THE m WILL CONVERGE TO SMALL SINCE WE ARE GOING THROUGH IT
+            res = min(res, nums[m])  
+        return res
