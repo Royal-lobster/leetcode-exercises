@@ -1,5 +1,7 @@
 class Solution(object):
     def findPeakElement(self, nums):
+        
+        # INITIALIZE LEFT RIGHT POINTERS
         l, r = 0, len(nums)-1
         
         # START BINARY SEARCH
@@ -13,6 +15,7 @@ class Solution(object):
             # IF THE MID IS GREATER THAN ITS RIGHT ELEMENT
             else:
                 r = m # search for the peak at left
+        
         # EVENTUALLY l == m == r
         return l
                 
